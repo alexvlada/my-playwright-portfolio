@@ -1,0 +1,13 @@
+# Node modules
+node_modules
+
+# Playwright test reports
+playwright-report
+test-results
+
+# Environment variables
+.env
+
+# OS fajlovi
+.DS_Store
+Thumbs.db
