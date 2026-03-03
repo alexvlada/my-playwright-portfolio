@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/yourusername/my-playwright-portfolio.git', branch: 'main'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Run Smoke Tests') {
+            steps {
+                sh 'npm run test:smoke'
+            }
+        }
+        stage('Run Regression Tests') {
+            steps {
+                sh 'npm run test:regression'
+            }
+        }
+        stage('Run API Tests') {
+            steps {
+                sh 'npm run test:api'
+            }
+        }
+        stage('Run Performance Tests') {
+            steps {
+                sh 'npm run test:perf'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline finished'
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "my-playwright-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test tests/smoke",
+    "test:regression": "playwright test tests/regression",
+    "test:api": "playwright test tests/api",
+    "test:perf": "k6 run k6/performance.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.38.0",
+    "k6": "^0.46.0",
+    "faker": "^6.6.6"
+  }
+}
